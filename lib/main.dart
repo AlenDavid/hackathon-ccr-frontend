@@ -12,8 +12,8 @@ main() => runApp(
         //
         initialRoute: '/',
         routes: <String, WidgetBuilder>{
-          '/home': (BuildContext context) => HomeScreen(),
-          '/': (BuildContext context) => LoginScreen(),
+          '/home': (BuildContext context) => NewHome(),
+          '/': (BuildContext context) => NewLogin(),
         },
       ),
     );

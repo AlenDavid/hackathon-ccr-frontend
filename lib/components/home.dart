@@ -3,7 +3,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:flexible_polyline/flexible_polyline.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -64,19 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-Future<Rota> fetchRota() async {
-  final ENDPOINT =
-      'https://router.hereapi.com/v8/routes?transportMode=truck&origin=52.5308%2C13.384&destination=52.5264%2C13.3686&apiKey=1VCV15zVXZ1EVSHuJKJxyAsctwBaiMcztF0NCG4B0UY&return=polyline';
-  final response = await http.get(ENDPOINT);
-
-  if (response.statusCode == 200) {
-    final rotas = json.decode(response.body);
-    return Rota.fromJson(rotas);
-  } else {
-    throw Exception('Failed to load album');
-  }
-}
-
 Future<Album> fetchAlbum() async {
   final response =
       await http.get('https://jsonplaceholder.typicode.com/albums/1');
@@ -104,16 +90,93 @@ class Album {
   }
 }
 
-class Rota {
-  final int id;
-  final String polyline;
+AppBar defaultAppBar(context) {
+  return new AppBar(
+    backgroundColor: Colors.white,
+    title: Center(
+      child: Text(
+        'Hackathon CCR',
+        style: TextStyle(color: Colors.black45),
+      ),
+    ),
+    leading: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CircleAvatar(
+        backgroundImage: AssetImage("images/avatar.png"),
+      ),
+    ),
+    actions: [
+      FlatButton(
+        child: Icon(
+          Icons.search,
+          color: Colors.black45,
+          size: 20,
+        ),
+        onPressed: () {},
+      ),
+      FlatButton(
+        child: Icon(
+          Icons.exit_to_app,
+          color: Colors.black45,
+          size: 20,
+        ),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      )
+    ],
+  );
+}
+// var body
 
-  Rota({this.id, this.polyline});
-
-  factory Rota.fromJson(Map<String, dynamic> json) {
-    return Rota(
-      id: json['routes'][0]['id'],
-      polyline: json['routes'][0]['polyline'],
+class NewHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: defaultAppBar(context),
+      body: Container(
+        color: Colors.white70,
+        child: ListView(
+          children: [
+            cardItem(),
+            cardItem(),
+            cardItem(),
+            cardItem(),
+            cardItem(),
+            cardItem(),
+            cardItem(),
+          ],
+        ),
+      ),
     );
   }
+}
+
+var lorem =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat elit vel lacus varius viverra. In eget leo consectetur, fermentum ipsum vel, sodales ante. Donec.';
+
+Widget cardItem() {
+  return Card(
+    color: Colors.white,
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const ListTile(
+          leading: Icon(Icons.album),
+          title: Text('Bruce'),
+          subtitle: Text('05/07/2020'),
+          trailing: Icon(Icons.more_vert),
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Image.asset('images/posto.jpg'),
+        ),
+        Container(
+          padding: EdgeInsets.all(20),
+          alignment: Alignment.centerLeft,
+          child: Text(lorem),
+        )
+      ],
+    ),
+  );
 }
