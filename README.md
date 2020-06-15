@@ -46,7 +46,7 @@ flutter run -d chrome
 
 ## Rodar o app na versão mobile - Android
 ```sh
-flutter run -d chrome
+flutter run -d android
 ```
 
 # Nos adicionem no LinkedIn
