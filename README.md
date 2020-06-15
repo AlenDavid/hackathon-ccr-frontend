@@ -50,11 +50,11 @@ flutter run -d chrome
 ```
 
 # Nos adicionem no LinkedIn
-[Angila Maria](https://www.linkedin.com/in/angila-maria-oliveira-brito-493056114/)
-[Cauane Andrade](https://www.linkedin.com/in/cauane-andrade/)
+[Angila Maria](https://www.linkedin.com/in/angila-maria-oliveira-brito-493056114/) <br>
+[Cauane Andrade](https://www.linkedin.com/in/cauane-andrade/) <br>
 [Candace Vasconcelos](https://www.linkedin.com/in/candace-vasconcelos)
 
 # Agradecimentos especias
-[Cinthia Sokoloski](https://www.linkedin.com/in/cinthiasokoloski/)
-[Murillo Bianconi](https://github.com/mcbianconi)
+[Cinthia Sokoloski](https://www.linkedin.com/in/cinthiasokoloski/) <br>
+[Murillo Bianconi](https://github.com/mcbianconi) <br>
 [Paul Pessoa](https://br.linkedin.com/in/paulmspessoa/)
