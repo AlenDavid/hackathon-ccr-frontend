@@ -1,6 +1,6 @@
 {
-    "name": "frontend",
-    "short_name": "frontend",
+    "name": "trilha de apoio",
+    "short_name": "trilha de apoio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -74,14 +74,26 @@ class NewLogin extends StatelessWidget {
             SizedBox(
               width: 128,
               height: 128,
-              child: FlutterLogo(), // TODO: trocar pelo logo
+              child: Image.asset("images/logo-pink-way.png"), // TODO: trocar pelo logo
             ),
             SizedBox(height: 20),
+            SizedBox(
+              width: 50,
+              height: 50,
+              child: Text(
+                'Bem vinda, Caminhoneira!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ), // TODO: trocar pelo logo
+            ),
             TextFormField(
               autofocus: true,
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
-                labelText: 'E-mail',
+                labelText: 'Número do celular',
                 labelStyle: TextStyle(
                   color: Colors.black38,
                   fontWeight: FontWeight.w400,
@@ -123,6 +135,7 @@ class NewLogin extends StatelessWidget {
             SizedBox(height: 40),
             Container(
               height: 60,
+              width: 40,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -144,7 +157,7 @@ class NewLogin extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Login',
+                        'Entrar',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -162,6 +175,17 @@ class NewLogin extends StatelessWidget {
                     Navigator.pushNamed(context, '/home');
                   },
                 ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              height: 40,
+              child: FlatButton(
+                child: Text(
+                  'Não é cadastrada? Faça agora!',
+                  textAlign: TextAlign.right,
+                ),
+                onPressed: () => {},
               ),
             ),
           ],

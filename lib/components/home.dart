@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 AppBar defaultAppBar(context) {
   return new AppBar(
@@ -10,21 +11,17 @@ AppBar defaultAppBar(context) {
         style: TextStyle(color: Colors.black45),
       ),
     ),
-    leading: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: CircleAvatar(
-        backgroundImage: AssetImage("images/avatar.png"),
-      ),
-    ),
-    actions: [
-      FlatButton(
+    leading: FlatButton(
         child: Icon(
-          Icons.search,
+          Icons.dehaze,
           color: Colors.black45,
           size: 20,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+        },
       ),
+    actions: [
       FlatButton(
         child: Icon(
           Icons.exit_to_app,
@@ -49,13 +46,9 @@ class NewHome extends StatelessWidget {
         color: Colors.white70,
         child: ListView(
           children: [
-            cardItem(),
-            cardItem(),
-            cardItem(),
-            cardItem(),
-            cardItem(),
-            cardItem(),
-            cardItem(),
+            cardCentro(),
+            cardItemPeNaEstrada(context),
+            cardItemSaudeBemEstar(context)
           ],
         ),
       ),
@@ -63,31 +56,84 @@ class NewHome extends StatelessWidget {
   }
 }
 
-var lorem =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat elit vel lacus varius viverra. In eget leo consectetur, fermentum ipsum vel, sodales ante. Donec.';
-
-Widget cardItem() {
+Widget cardCentro() {
   return Card(
     color: Colors.white,
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         const ListTile(
-          leading: Icon(Icons.album),
-          title: Text('Bruce'),
-          subtitle: Text('05/07/2020'),
-          trailing: Icon(Icons.more_vert),
+          title: Text('Olá, Sheila'),
+          subtitle: Text('Escolha um serviço'),
+          leading: CircleAvatar(
+            backgroundImage: AssetImage("images/avatar.png"),
+          ),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Image.asset('images/posto.jpg'),
-        ),
-        Container(
-          padding: EdgeInsets.all(20),
-          alignment: Alignment.centerLeft,
-          child: Text(lorem),
-        )
       ],
+    ),
+  );
+}
+
+Widget cardItemPeNaEstrada(context) {
+  return Center(
+    child: Card(
+      child: InkWell(
+        splashColor: Colors.blue.withAlpha(30),
+        child: Container(
+          width: 600,
+          height: 300,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              RaisedButton(
+                shape: StadiumBorder(),
+                // splashColor: Colors.orange,
+                color: Theme.of(context).primaryColor,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pe-na-estrada');
+                },
+                child: Text('Pé na Estrada', style: TextStyle(color: Colors.white)),
+            ),
+              const ListTile(
+                title: Text('Localização de postos CCR no trajeto'),
+              ),
+              Container(child: Image.asset('images/posto.jpg')),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget cardItemSaudeBemEstar(context) {
+  return Center(
+    child: Card(
+      child: InkWell(
+        splashColor: Colors.blue.withAlpha(30),
+        child: Container(
+          width: 600,
+          height: 300,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              RaisedButton(
+                shape: StadiumBorder(),
+                // splashColor: Colors.orange,
+                color: Theme.of(context).primaryColor,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/saude-bem-estar');
+                },
+                child: Text('Saúde e Bem estar', style: TextStyle(color: Colors.white)),
+            ),
+              const ListTile(
+                title: Text('Atendimento Médico e cuidados pessoais'),
+              ),
+              Container(child: Image.asset('images/posto.jpg')),
+            ],
+          ),
+        ),
+      ),
     ),
   );
 }
