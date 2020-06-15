@@ -1,8 +1,8 @@
 # Pink Way: seu parceiro de estrada
 <img src="https://media.discordapp.net/attachments/719238696821588032/721899775129157632/Screen_Shot_2020-06-14_at_22.31.39.png?width=1440&height=602" alt="Paris" class="center">
 
-Versão web: https://mcbianconi.github.io/hackathon-ccr-frontend/#/ <br>
-Versão mobile - Android: http://mobiletest.me/samsung_galaxy_y_emulator/?u=https://mcbianconi.github.io/hackathon-ccr-frontend/#/ <br>
+**Versão web**: https://mcbianconi.github.io/hackathon-ccr-frontend/#/ <br>
+**Versão mobile - Android**: http://mobiletest.me/samsung_galaxy_y_emulator/?u=https://mcbianconi.github.io/hackathon-ccr-frontend/#/ <br>
 
 Somos um grupo de 3 mulheres que desenvolveu um produto para outras mulheres: as Caminhoneiras.
 
