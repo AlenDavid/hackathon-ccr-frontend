@@ -31,6 +31,11 @@ flutter:
     - images/avatar.png
     - images/posto.jpg
     - images/logo-pink-way.png
+    - images/posto-ccr.jpg
+    - images/caminhoneira-loira.jpeg
+    - images/autocuidado-1.jpg
+    - images/ginecologista.jpg
+    - images/nutricionista.jpg
 
 fonts:
   - family: ShadowsIntoLight

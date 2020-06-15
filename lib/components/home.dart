@@ -48,7 +48,8 @@ class NewHome extends StatelessWidget {
           children: [
             cardCentro(),
             cardItemPeNaEstrada(context),
-            cardItemSaudeBemEstar(context)
+            cardItemSaudeBemEstar(context),
+            cardItemBemEstar(context)
           ],
         ),
       ),
@@ -95,9 +96,9 @@ Widget cardItemPeNaEstrada(context) {
                 child: Text('Pé na Estrada', style: TextStyle(color: Colors.white)),
             ),
               const ListTile(
-                title: Text('Localização de postos CCR no trajeto'),
+                title: Text('Informações importantes ao longo trajeto'),
               ),
-              Container(child: Image.asset('images/posto.jpg')),
+              Container(child: Image.asset('images/caminhoneira-loira.jpeg')),
             ],
           ),
         ),
@@ -124,12 +125,44 @@ Widget cardItemSaudeBemEstar(context) {
                 onPressed: () {
                   Navigator.pushNamed(context, '/saude-bem-estar');
                 },
-                child: Text('Saúde e Bem estar', style: TextStyle(color: Colors.white)),
+                child: Text('Saúde CCR', style: TextStyle(color: Colors.white)),
             ),
               const ListTile(
-                title: Text('Atendimento Médico e cuidados pessoais'),
+                title: Text('Atendimento Médico, psicológico e exames'),
               ),
-              Container(child: Image.asset('images/posto.jpg')),
+              Container(child: Image.asset('images/posto-ccr.jpg')),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget cardItemBemEstar(context) {
+  return Center(
+    child: Card(
+      child: InkWell(
+        splashColor: Colors.blue.withAlpha(30),
+        child: Container(
+          width: 600,
+          height: 300,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              RaisedButton(
+                shape: StadiumBorder(),
+                // splashColor: Colors.orange,
+                color: Theme.of(context).primaryColor,
+                onPressed: () {
+                  Navigator.pushNamed(context, '/saude-bem-estar');
+                },
+                child: Text('Bem Estar', style: TextStyle(color: Colors.white)),
+            ),
+              const ListTile(
+                title: Text('Manicure, maquiagem e cabelo'),
+              ),
+              Container(child: Image.asset('images/autocuidado-1.jpg')),
             ],
           ),
         ),

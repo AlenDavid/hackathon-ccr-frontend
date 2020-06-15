@@ -64,7 +64,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            width: 50,
+            width: 250,
             height: 50,
             child: Text(
               'Escolha o destino',
@@ -101,7 +101,44 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             onPressed: () {
               Navigator.pushNamed(context, '/pe-na-estrada-mapa');
             },
-            child: Text('Pesquisar', style: TextStyle(color: Colors.white)),
+            child: Text('Iniciar nova rota', style: TextStyle(color: Colors.white)),
+          ),
+          SizedBox(height: 20),
+          SizedBox(
+            width: 250,
+            height: 50,
+            child: Text(
+              'Rotas recentes:',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ), // TODO: trocar pelo logo
+          ),
+          SizedBox(
+            width: 300,
+            height: 80,
+            child: Text(
+              'De: Porto Tubarão (Vitória - ES)',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.normal,
+              ),
+            ), // TODO: trocar pelo logo
+          ),
+          SizedBox(
+            width: 300,
+            height: 80,
+            child: Text(
+              'Pata: Porto Colonial (São José dos Campos - SP)',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.normal,
+              ),
+            ), // TODO: trocar pelo logo
           ),
         ],
       ),

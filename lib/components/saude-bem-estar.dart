@@ -79,7 +79,7 @@ Widget cardItemSaudeBemEstar1(context) {
         splashColor: Colors.blue.withAlpha(30),
         child: Container(
           width: 500,
-          height: 200,
+          height: 400,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -97,7 +97,7 @@ Widget cardItemSaudeBemEstar1(context) {
                 subtitle: Text('Massagens e Limpeza'),
                 trailing: Icon(Icons.calendar_today),
               ),
-              Container(child: Image.asset('images/posto.jpg')),
+              Container(child: Image.asset('images/ginecologista.jpg')),
             ],
           ),
         ),
@@ -114,7 +114,7 @@ Widget cardItemSaudeBemEstar2(context) {
         splashColor: Colors.blue.withAlpha(30),
         child: Container(
           width: 500,
-          height: 200,
+          height: 400,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -132,7 +132,7 @@ Widget cardItemSaudeBemEstar2(context) {
                 subtitle: Text('Manicure, Pedicure e Podologia'),
                 trailing: Icon(Icons.calendar_today),
               ),
-              Container(child: Image.asset('images/posto.jpg')),
+              Container(child: Image.asset('images/nutricionista.jpg')),
             ],
           ),
         ),
@@ -148,7 +148,7 @@ Widget cardItemSaudeBemEstar3(context) {
         splashColor: Colors.blue.withAlpha(30),
         child: Container(
           width: 500,
-          height: 200,
+          height: 400,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
